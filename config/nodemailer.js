@@ -4,7 +4,7 @@ const email = process.env.EMAIL;
 const pass = process.env.EMAIL_PASS;
 
 export const transporter = nodemailer.createTransport({
-  host: "smtp.strato.de",
+  host: "smtp.ionos.de",
   port: 465,
   secure: true, // STARTTLS
   auth: {
