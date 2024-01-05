@@ -19,7 +19,7 @@ const initValues = {
   school: "",
   email: "",
   phone: "",
-  option: "",
+  case: "",
   subject: "",
   serial: "",
   message: "",
@@ -57,7 +57,7 @@ export default function Home() {
       setState(initState);
       toast({
         title: "Nachricht versendet.",
-        status: "Erfolgreich",
+        status: "success",
         duration: 2000,
         position: "top",
       });
@@ -71,8 +71,9 @@ export default function Home() {
   };
 
   return (
-    <Container maxW="550px" mt={12}>
-      <Heading>Diebstahl/Verlust/Schadensmeldung</Heading>
+    <Container maxW="700px" mt={12}>
+      <Heading mb={12}>Diebstahl/Verlust/Schadensmeldung</Heading>
+
       {error && (
         <Text color="red.300" my={4} fontSize="xl">
           {error}
@@ -106,8 +107,40 @@ export default function Home() {
           onBlur={onBlur}
         >
           <option value="">Wählen Sie eine Option</option>
-          <option value="option1">Kleist </option>
-          <option value="option2">Gym1</option>
+          <option value="Astrid Lindgren Grundschule">
+            Astrid Lindgren Grundschule
+          </option>
+          <option value="Friedensgrundschule">Friedensgrundschule</option>
+          <option value="Grundschule am Muehlenfliess">
+            Grundschule am Mühlenfließ
+          </option>
+          <option value="Grundschule Lenné">Grundschule Lenné</option>
+          <option value="Grundschule am Botanischen Garten">
+            Grundschule am Botanischen Garten
+          </option>
+          <option value="Grundschule Erich Kaestner">
+            Grundschule Erich Kästner
+          </option>
+          <option value="meko-Grundschule">
+            meko-Grundschule - Schule mit besonderer Medienkompetenz
+          </option>
+          <option value="Grundschule Mitte">Grundschule Mitte</option>
+          <option value="Oberschule Kleist">
+            Oberschule "Heinrich von Kleist"
+          </option>
+          <option value="Grundschule Mitte">
+            Oberschule "Ulrich von Hutten"
+          </option>
+          <option value="Sportschule">Sportschule</option>
+          <option value="Gym 1 Karl Liebknecht">
+            Städt. Gymnasium I - Karl-Liebknecht-Gymnasium
+          </option>
+          <option value="Gauss Gymnasium">
+            Städt. Gymnasium Carl Friedrich Gauß
+          </option>
+          <option value="Hansaschule">Hansa-Schule</option>
+          <option value="Lessingschule">Lessingschule</option>
+          <option value="KWOSZ">Konrad Wachsmann Oberstufenzentrum</option>
         </Select>
         <FormErrorMessage>Erforderlich</FormErrorMessage>
       </FormControl>
@@ -138,22 +171,18 @@ export default function Home() {
         <FormErrorMessage>Erforderlich</FormErrorMessage>
       </FormControl>
 
-      <FormControl
-        isRequired
-        mb={5}
-        isInvalid={touched.option && !values.option}
-      >
-        <FormLabel>Option wählen</FormLabel>
+      <FormControl isRequired mb={5} isInvalid={touched.case && !values.case}>
+        <FormLabel>Vorfall wählen</FormLabel>
         <Select
-          name="option"
+          name="case"
           errorBorderColor="red.300"
-          value={values.option}
+          value={values.case}
           onChange={handleChange}
           onBlur={onBlur}
         >
           <option value="">Wählen Sie eine Option</option>
-          <option value="option1">Diebstahl</option>
-          <option value="option2">Verlust</option>
+          <option value="Diebstahl">Diebstahl</option>
+          <option value="Verlust">Verlust</option>
         </Select>
         <FormErrorMessage>Erforderlich</FormErrorMessage>
       </FormControl>
@@ -209,11 +238,12 @@ export default function Home() {
         <Textarea
           type="text"
           name="message"
-          rows={4}
+          rows={8}
           errorBorderColor="red.300"
           value={values.message}
           onChange={handleChange}
           onBlur={onBlur}
+          mt={8}
         />
         <FormErrorMessage>Erforderlich</FormErrorMessage>
       </FormControl>
@@ -229,6 +259,11 @@ export default function Home() {
       >
         Absenden
       </Button>
+      {error && (
+        <Text color="red.300" my={4} fontSize="xl">
+          {error}
+        </Text>
+      )}
     </Container>
   );
 }
