@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  my-next-app:
+    image: forms:latest
+    ports:
+      - "557:3000"
