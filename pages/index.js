@@ -183,6 +183,7 @@ export default function Home() {
           <option value="">Wählen Sie eine Option</option>
           <option value="Diebstahl">Diebstahl</option>
           <option value="Verlust">Verlust</option>
+          <option value="Schaden">Schaden</option>
         </Select>
         <FormErrorMessage>Erforderlich</FormErrorMessage>
       </FormControl>
