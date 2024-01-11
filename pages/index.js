@@ -234,7 +234,8 @@ export default function Home() {
           <br />
           Wer hat ihn festgestellt? <br />
           Welche Handlungen wurden bereits vorgenommen? <br />
-          Gibt es einen (bekannten) Verursacher?
+          Gibt es einen (bekannten) Verursacher? (Bei einem Lehrelaptop:) Wurde,
+          wie im Leihvertrag vereinbart, eine Versicherung abgeschlossen?
         </p>
         <Textarea
           type="text"
