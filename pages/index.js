@@ -128,7 +128,7 @@ export default function Home() {
           <option value="Oberschule Kleist">
             Oberschule "Heinrich von Kleist"
           </option>
-          <option value="Grundschule Mitte">
+          <option value="Oberschule Ulrich von Hutten">
             Oberschule "Ulrich von Hutten"
           </option>
           <option value="Sportschule">Sportschule</option>
