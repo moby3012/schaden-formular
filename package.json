@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "echo 'Skipping postinstall script...'"
+    "lint": "next lint"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.3.6",
@@ -25,8 +24,5 @@
   "devDependencies": {
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.0"
-  },
-  "engines": {
-    "node": "18.x"
   }
 }
