@@ -1,0 +1,102 @@
+{
+  "contactMessageFields": {
+    "name": "Name",
+    "email": "Email",
+    "subject": "Betreff",
+    "message": "Nachricht/Hergang",
+    "school": "Schule",
+    "phone": "Telefon",
+    "case": "Vorfall",
+    "serial": "Seriennummer"
+  },
+  "initialValues": {
+    "name": "",
+    "school": "",
+    "email": "",
+    "phone": "",
+    "case": "",
+    "subject": "",
+    "serial": "",
+    "message": ""
+  },
+  "schools": [
+    {
+      "value": "Astrid Lindgren Grundschule",
+      "label": "Astrid Lindgren Grundschule"
+    },
+    {
+      "value": "Friedensgrundschule",
+      "label": "Friedensgrundschule"
+    },
+    {
+      "value": "Grundschule am Muehlenfliess",
+      "label": "Grundschule am Mühlenfließ"
+    },
+    {
+      "value": "Grundschule Lenné",
+      "label": "Grundschule Lenné"
+    },
+    {
+      "value": "Grundschule am Botanischen Garten",
+      "label": "Grundschule am Botanischen Garten"
+    },
+    {
+      "value": "Grundschule Erich Kaestner",
+      "label": "Grundschule Erich Kästner"
+    },
+    {
+      "value": "meko-Grundschule",
+      "label": "meko-Grundschule - Schule mit besonderer Medienkompetenz"
+    },
+    {
+      "value": "Grundschule Mitte",
+      "label": "Grundschule Mitte"
+    },
+    {
+      "value": "Oberschule Kleist",
+      "label": "Oberschule \"Heinrich von Kleist\""
+    },
+    {
+      "value": "Oberschule Ulrich von Hutten",
+      "label": "Oberschule \"Ulrich von Hutten\""
+    },
+    {
+      "value": "Sportschule",
+      "label": "Sportschule"
+    },
+    {
+      "value": "Gym 1 Karl Liebknecht",
+      "label": "Städt. Gymnasium I - Karl-Liebknecht-Gymnasium"
+    },
+    {
+      "value": "Gauss Gymnasium",
+      "label": "Städt. Gymnasium Carl Friedrich Gauß"
+    },
+    {
+      "value": "Hansaschule",
+      "label": "Hansa-Schule"
+    },
+    {
+      "value": "Lessingschule",
+      "label": "Lessingschule"
+    },
+    {
+      "value": "KWOSZ",
+      "label": "Konrad Wachsmann Oberstufenzentrum"
+    }
+  ],
+  "caseTypes": [
+    {
+      "value": "Diebstahl",
+      "label": "Diebstahl"
+    },
+    {
+      "value": "Verlust",
+      "label": "Verlust"
+    },
+    {
+      "value": "Schaden",
+      "label": "Schaden"
+    }
+  ]
+}

@@ -13,19 +13,9 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { sendContactForm } from "../lib/api";
+import { initialValues, schools, caseTypes } from "../config/formFields.json";
 
-const initValues = {
-  name: "",
-  school: "",
-  email: "",
-  phone: "",
-  case: "",
-  subject: "",
-  serial: "",
-  message: "",
-};
-
-const initState = { isLoading: false, error: "", values: initValues };
+const initState = { isLoading: false, error: "", values: initialValues };
 
 export default function Home() {
   const toast = useToast();
@@ -107,40 +97,11 @@ export default function Home() {
           onBlur={onBlur}
         >
           <option value="">Wählen Sie eine Option</option>
-          <option value="Astrid Lindgren Grundschule">
-            Astrid Lindgren Grundschule
-          </option>
-          <option value="Friedensgrundschule">Friedensgrundschule</option>
-          <option value="Grundschule am Muehlenfliess">
-            Grundschule am Mühlenfließ
-          </option>
-          <option value="Grundschule Lenné">Grundschule Lenné</option>
-          <option value="Grundschule am Botanischen Garten">
-            Grundschule am Botanischen Garten
-          </option>
-          <option value="Grundschule Erich Kaestner">
-            Grundschule Erich Kästner
-          </option>
-          <option value="meko-Grundschule">
-            meko-Grundschule - Schule mit besonderer Medienkompetenz
-          </option>
-          <option value="Grundschule Mitte">Grundschule Mitte</option>
-          <option value="Oberschule Kleist">
-            Oberschule "Heinrich von Kleist"
-          </option>
-          <option value="Oberschule Ulrich von Hutten">
-            Oberschule "Ulrich von Hutten"
-          </option>
-          <option value="Sportschule">Sportschule</option>
-          <option value="Gym 1 Karl Liebknecht">
-            Städt. Gymnasium I - Karl-Liebknecht-Gymnasium
-          </option>
-          <option value="Gauss Gymnasium">
-            Städt. Gymnasium Carl Friedrich Gauß
-          </option>
-          <option value="Hansaschule">Hansa-Schule</option>
-          <option value="Lessingschule">Lessingschule</option>
-          <option value="KWOSZ">Konrad Wachsmann Oberstufenzentrum</option>
+          {schools.map((school) => (
+            <option key={school.value} value={school.value}>
+              {school.label}
+            </option>
+          ))}
         </Select>
         <FormErrorMessage>Erforderlich</FormErrorMessage>
       </FormControl>
@@ -181,9 +142,11 @@ export default function Home() {
           onBlur={onBlur}
         >
           <option value="">Wählen Sie eine Option</option>
-          <option value="Diebstahl">Diebstahl</option>
-          <option value="Verlust">Verlust</option>
-          <option value="Schaden">Schaden</option>
+          {caseTypes.map((caseType) => (
+            <option key={caseType.value} value={caseType.value}>
+              {caseType.label}
+            </option>
+          ))}
         </Select>
         <FormErrorMessage>Erforderlich</FormErrorMessage>
       </FormControl>
