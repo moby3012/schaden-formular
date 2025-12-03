@@ -1,6 +1,29 @@
 version: "3.9"
+
 services:
-  forms:
-    image: forms:latest
+  schaden-formular:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: schaden-formular:latest
+    container_name: schaden-formular-app
     ports:
-      - "557:3000"
+      - "3000:3000"  # Change the first port (host port) if needed, e.g., "80:3000" or "557:3000"
+    environment:
+      # Email configuration - REQUIRED for the app to work
+      - EMAIL=${EMAIL}
+      - EMAIL_PASS=${EMAIL_PASS}
+      - EMAIL_HOST=${EMAIL_HOST}
+      - EMAIL_PORT=${EMAIL_PORT}
+      - EMAIL_DEST=${EMAIL_DEST}
+      # Next.js configuration
+      - NODE_ENV=production
+    env_file:
+      - .env  # Load environment variables from .env file
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000', (r) => process.exit(r.statusCode === 200 ? 0 : 1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
